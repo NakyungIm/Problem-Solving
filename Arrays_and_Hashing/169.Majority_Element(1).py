@@ -9,6 +9,15 @@ class Solution:
                 count[i] += 1
             else:
                 count[i] = 1
-        if max(count.values()) > len(nums)/2:
-            result = [key for key, val in count.items() if val == max(count.values())]
-            return result[0]
+  
+        # First solution
+        max_value = max(count.values())
+        for key, val in count.items():
+            if val == max_value:
+                result = key
+        return result
+
+        # Second solution
+        # if max(count.values()) > len(nums)/2:
+        #     result = [key for key, val in count.items() if val == max(count.values())]
+        #     return result[0]
